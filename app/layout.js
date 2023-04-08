@@ -9,17 +9,13 @@ import Footer from "@/components/footer";
 import {usePathname} from "next/navigation";
 
 
-export const metadata = {
-    title: 'Finn Lestrange',
-    description: "Finn Lestrange's Personal Website",
-}
 
 export default function RootLayout({children}) {
     const pathname = usePathname();
     return (
         <html lang="en">
         <head>
-            <title>{metadata.title}</title>
+            <title>Finn Lestrange - Personal Porfolio</title>
         </head>
         <body>
         <CacheProvider>
