@@ -1,102 +1,109 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+'use client'
 
-const inter = Inter({ subsets: ['latin'] })
+import Image from 'next/image'
+import {Inter} from 'next/font/google'
+import {Box, Container, Heading, Link, Text, useColorModeValue} from "@chakra-ui/react";
+import PageSection from "@/components/pageSection";
+import FeaturedProjects from "@/components/featuredProjects";
+import UniversityProjects from "@/components/universityProjects";
+
+const inter = Inter({subsets: ['latin']})
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+    return (
+        <Container
+            h={'100%'}
+            w={'100%'}
+            maxW={'100%'}
+            maxH={'100%'}
+            p={15}
+            px={{base: '10%', md: '20%', lg: '27%'}}
+            pt={"3%"}
+            display={'flex'}
+            flexDirection={'column'}
+            bg={useColorModeValue('gray.50', 'gray.800')}
+            textColor={useColorModeValue('gray.800', 'gray.50')}
         >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+            <Box
+                borderRadius={'lg'}
+                bg={useColorModeValue('#dedada', 'whiteAlpha.200')}
+                mb={6}
+                p={3}
+                textAlign={'center'}
+                css={{
+                    backdropFilter: 'blur(10px)',
+                }}>
+                {/*Blurb Container*/}
+                👋 &nbsp; Hey, I&apos;m a part-time Developer & Computer Science student at the University of Glasgow.
+            </Box>
+            <Box>
+                {/*Where the 3D model will sit*/}
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+            </Box>
+            <Box display={{base: 'flex', md: 'flex'}}>
+                <Box flexGrow={1} pt={3}>
+                    {/*Name, bio and image*/}
+                    <Heading as={'h2'} variant={'page-title'}>
+                        Finn Lestrange.
+                    </Heading>
+                    <Text fontFamily={"monospace"}>
+                        Software Engineer & Computer Science Student based in the UK.
+                    </Text>
+                </Box>
+                <Box
+                    flexShrink={0}
+                    ml={{md: 6}}
+                    textAlign={'center'}
+                > <Box
+                    borderColor={useColorModeValue('#858585', 'whiteAlpha.500')}
+                    borderWidth={2}
+                    borderStyle={'solid'}
+                    w={'100px'}
+                    h={'100px'}
+                    display={'inline-block'}
+                    borderRadius={'full'}
+                    overflow={'hidden'}
+                >
+                    <Image
+                        src={'/images/profile.jpeg'}
+                        alt={'Profile Picture'}
+                        borderRadius={'full'}
+                        width={100}
+                        height={100}
+                    />
+                </Box>
+                </Box>
+            </Box>
+            <PageSection delay={0.1}>
+                <Heading as={'h3'} fontFamily={"mono"} variant={'section-title'}>
+                    Work
+                </Heading>
+                <Text
+                    fontSize={'lg'}
+                >
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I currently work as a Developer at the (<Link href={"https://isa.aberdeen.sch.uk"}>International School Aberdeen</Link>)
+                    where I work on a variety of projects, including maintaining the student information system (PowerSchool),
+                    various internal tools and GSuite Automations.
+                </Text>
+                <br />
+            <FeaturedProjects />
+            </PageSection>
+            <br />
+            <PageSection delay={0.1}>
+                <Heading as={'h3'} fontFamily={"mono"} variant={'section-title'}>
+                    Education & Skills
+                </Heading>
+                <Text
+                    fontSize={'lg'}
+                >
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I attend the University of Glasgow, where I am on track for a first class degree in Computer Science.
+                    I am also on track to complete a Masters in Computer Science by the end of 2026.
+                    I have just finished my 2nd year and I am actively seeking a placement for my 3rd year. Some of my projects and skills can be
+                    found below.
+                </Text>
+                <UniversityProjects />
+            </PageSection>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+        </Container>
+    )
 }
