@@ -64,7 +64,7 @@ export default function Home() {
                     borderRadius={'full'}
                     overflow={'hidden'}
                 >
-                    <Image
+                    <img
                         src={'/images/profile.jpeg'}
                         alt={'Profile Picture'}
                         borderRadius={'full'}
