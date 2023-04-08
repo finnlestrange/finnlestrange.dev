@@ -8,7 +8,7 @@ import {
     chakra,
     Grid,
     GridItem,
-    Container, Stack, SimpleGrid, Icon, useColorModeValue,
+    Container, Stack, SimpleGrid, Icon, useColorModeValue, useColorMode,
 } from '@chakra-ui/react';
 import Link from "next/link";
 import {FaGithub, FaApple} from "react-icons/fa";
@@ -92,7 +92,7 @@ export default function GithubProjects() {
             <Divider mt={12} mb={12}/>
             <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
                 <Feature
-                    icon={<Icon as={FaApple} color={"black"} w={10} h={10} />}
+                    icon={<Icon as={FaApple} color={useColorMode().colorMode === 'light' ? "black" : "white"} w={10} h={10} />}
                     title={'Custom Hackintosh'}
                     text={
                         'This is a project that I have been working on over the spring break. I converted an old workstation' +
