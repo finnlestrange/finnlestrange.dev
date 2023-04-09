@@ -1,13 +1,9 @@
 'use client'
 
-import Image from 'next/image'
-import {Inter} from 'next/font/google'
 import {Box, Container, Heading, Link, Text, useColorModeValue} from "@chakra-ui/react";
 import PageSection from "@/components/pageSection";
 import FeaturedProjects from "@/components/featuredProjects";
 import UniversityProjects from "@/components/universityProjects";
-
-const inter = Inter({subsets: ['latin']})
 
 export default function Home() {
     return (
@@ -38,7 +34,6 @@ export default function Home() {
             </Box>
             <Box>
                 {/*Where the 3D model will sit*/}
-
             </Box>
             <Box display={{base: 'flex', md: 'flex'}}>
                 <Box flexGrow={1} pt={3}>
@@ -67,7 +62,6 @@ export default function Home() {
                     <img
                         src={'/images/profile.jpeg'}
                         alt={'Profile Picture'}
-                        borderRadius={'full'}
                         width={100}
                         height={100}
                     />
@@ -81,14 +75,16 @@ export default function Home() {
                 <Text
                     fontSize={'lg'}
                 >
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I currently work as a Developer at the (<Link href={"https://isa.aberdeen.sch.uk"}>International School Aberdeen</Link>)
-                    where I work on a variety of projects, including maintaining the student information system (PowerSchool),
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I currently work as a Developer at the (<Link
+                    href={"https://isa.aberdeen.sch.uk"}>International School Aberdeen</Link>)
+                    where I work on a variety of projects, including maintaining the student information system
+                    (PowerSchool),
                     various internal tools and GSuite Automations.
                 </Text>
-                <br />
-            <FeaturedProjects />
+                <br/>
+                <FeaturedProjects/>
             </PageSection>
-            <br />
+            <br/>
             <PageSection delay={0.1}>
                 <Heading as={'h3'} fontFamily={"mono"} variant={'section-title'}>
                     Education & Skills
@@ -96,12 +92,14 @@ export default function Home() {
                 <Text
                     fontSize={'lg'}
                 >
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I attend the University of Glasgow, where I am on track for a first class degree in Computer Science.
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I attend the University of Glasgow, where I am on track for a first
+                    class degree in Computer Science.
                     I am also on track to complete a Masters in Computer Science by the end of 2026.
-                    I have just finished my 2nd year and I am actively seeking a placement for my 3rd year. Some of my projects and skills can be
+                    I have just finished my 2nd year and I am actively seeking a placement for my 3rd year. Some of my
+                    projects and skills can be
                     found below.
                 </Text>
-                <UniversityProjects />
+                <UniversityProjects/>
             </PageSection>
 
         </Container>
