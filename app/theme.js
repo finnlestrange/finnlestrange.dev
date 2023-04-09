@@ -30,7 +30,13 @@ const components = {
             },
             textUnderlineOffset: 3
         })
-    }
+    },
+    Modal: {
+        baseStyle: {
+            overflow: 'hidden',
+            overflowY: 'auto',
+        }
+    },
 }
 
 const fonts = {

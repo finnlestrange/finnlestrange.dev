@@ -9,7 +9,7 @@ import {
     ModalContent, ModalFooter, ModalHeader,
     ModalOverlay,
     useColorMode,
-    useDisclosure
+    useDisclosure, VStack
 } from "@chakra-ui/react";
 
 import {
@@ -29,7 +29,10 @@ import {
 
 import {HamburgerIcon, MoonIcon, SunIcon, SmallCloseIcon} from "@chakra-ui/icons";
 import {AnimatePresence, motion} from "framer-motion";
-import {FcDiploma2} from "react-icons/fc";
+import {FcBusinessContact, FcDiploma2, FcLink} from "react-icons/fc";
+import {FaFacebook} from "react-icons/all";
+import {FaGithub, FaInstagram} from "react-icons/fa";
+import {FiGitlab} from "react-icons/fi";
 
 const LinkElement = ({href, path, target, children, ...props}) => {
     const active = path === href;
@@ -55,11 +58,19 @@ const LinkElement = ({href, path, target, children, ...props}) => {
     )
 }
 
+const copyTextToClipBoard = (text) => {
+    navigator.clipboard.writeText(text).then(() => {
+        console.log('Async: Copying to clipboard was successful!');
+    });
+}
+
+
 const NavBar = (props) => {
     const {pathname} = props;
     const {colorMode, toggleColorMode} = useColorMode();
     const {isOpen, onOpen, onClose} = useDisclosure();
     const {isOpen: cvOpen, onOpen: setCVOpen, onClose: setCVClose} = useDisclosure();
+    const {isOpen: isContactInfoOpen, onOpen: setContactInfoOpen, onClose: setContactInfoClosed} = useDisclosure();
 
     return (
         <>
@@ -94,7 +105,7 @@ const NavBar = (props) => {
                         <HStack
                             as={'nav'}
                             spacing={4}
-                            display={{base: 'none', md: 'flex'}}
+                            display={{sm: 'none', md: 'none', lg: 'flex'}}
                             pl={4}
                         >
                             <LinkElement path={pathname} href={'/projects'}>Projects</LinkElement>
@@ -104,7 +115,12 @@ const NavBar = (props) => {
 
                     <Flex alignItems={'center'}>
                         <Stack direction={'row'} spacing={7}>
-                            <Button display={{sm: 'none', md: 'inline-flex'}} leftIcon={<Icon as={FcDiploma2}/>} onClick={setCVOpen}>
+                            <Button display={{sm: 'none', md: 'none', lg: 'inline-flex'}} leftIcon={<Icon as={FcBusinessContact}/>}
+                                    onClick={setContactInfoOpen}>
+                                Contact
+                            </Button>
+                            <Button display={{sm: 'none', md: 'none', lg: 'inline-flex'}} leftIcon={<Icon as={FcDiploma2}/>}
+                                    onClick={setCVOpen}>
                                 CV
                             </Button>
                             <AnimatePresence mode='wait' initial={false}>
@@ -120,7 +136,7 @@ const NavBar = (props) => {
                                             _hover={{
                                                 backgroundColor: colorMode === 'light' ? '#5f5fcb' : '#eebb52',
                                             }}
-                                            display={{base: 'none', md: 'inline-flex'}}
+                                            display={{base: 'none', md: 'none', lg: 'inline-flex'}}
                                     >
                                         {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
                                     </Button>
@@ -129,9 +145,9 @@ const NavBar = (props) => {
 
                             <Menu onClose={onClose}>
                                 <MenuButton
-                                    display={{base: 'inline-flex', md: 'none'}}
+                                    display={{base: 'inline-flex', md: 'inline-flex', sm: 'inline-flex', lg:'none'}}
                                     as={IconButton}
-                                    icon={isOpen ? <SmallCloseIcon /> : <HamburgerIcon/>}
+                                    icon={isOpen ? <SmallCloseIcon/> : <HamburgerIcon/>}
                                     onClick={isOpen ? onClose : onOpen}
                                     variant={'outline'}
                                     minW={10}/>
@@ -139,12 +155,15 @@ const NavBar = (props) => {
                                     <MenuItem as={NextLink} href={"/"}>Home</MenuItem>
                                     <MenuDivider/>
                                     <MenuItem as={NextLink} href={"projects/"}>Projects</MenuItem>
+                                    <MenuItem onClick={setContactInfoOpen}>
+                                        <Icon as={FcBusinessContact}/> &nbsp; Contact</MenuItem>
                                     <MenuItem onClick={setCVOpen}>
-                                        <Icon as={FcDiploma2} /> &nbsp; CV</MenuItem>
+                                        <Icon as={FcDiploma2}/> &nbsp; CV</MenuItem>
                                     <MenuDivider/>
                                     <MenuItem onClick={toggleColorMode}
                                               __hover={{backgroundColor: colorMode === 'light' ? '#5f5fcb' : '#eebb52'}}>
-                                        {colorMode === 'light' ? <MoonIcon color={'#5f5fcb'}/> : <SunIcon color={'#eebb52'}/>} &nbsp; Toggle {colorMode === 'light' ? 'dark' : 'light'} mode
+                                        {colorMode === 'light' ? <MoonIcon color={'#5f5fcb'}/> : <SunIcon
+                                            color={'#eebb52'}/>} &nbsp; Toggle {colorMode === 'light' ? 'dark' : 'light'} mode
                                     </MenuItem>
                                 </MenuList>
                             </Menu>
@@ -153,8 +172,9 @@ const NavBar = (props) => {
                 </Flex>
             </Box>
 
-            <Modal isOpen={cvOpen} onClose={setCVClose}>
-                <ModalOverlay />
+            {/* CV Modal */}
+            <Modal isOpen={cvOpen} onClose={setCVClose} blockScrollOnMount={true} preserveScrollBarGap={true}>
+                <ModalOverlay/>
                 <ModalContent
                     maxW={{sm: '100%', md: '80%', lg: '60%'}}
                     minH={{sm: '60%', md: '80%', lg: '60%'}}
@@ -164,7 +184,76 @@ const NavBar = (props) => {
                         <embed src={'/files/CV.pdf'} width={'100%'} height={'100%'}/>
                     </ModalBody>
                     <ModalFooter>
-                        <Button leftIcon={<SmallCloseIcon />} colorScheme='red' mr={3} onClick={setCVClose}>
+                        <Button leftIcon={<SmallCloseIcon/>} colorScheme='red' mr={3} onClick={setCVClose}>
+                            Close
+                        </Button>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
+
+            {/* Contact Info Modal */}
+            <Modal isOpen={isContactInfoOpen} onClose={setContactInfoClosed} blockScrollOnMount={true}
+                   preserveScrollBarGap={true}>
+                <ModalOverlay/>
+                <ModalContent
+                    textColor={useColorModeValue('gray.700', 'gray.200')}
+                    maxW={{sm: '100%', md: '80%', lg: '25%'}}
+                >
+                    <ModalHeader>Contact Me</ModalHeader>
+                    <ModalCloseButton/>
+                    <ModalBody>
+                        <VStack spacing={2} align={"left"}>
+                            <Button
+                                leftIcon={<Icon as={FaGithub}/>}
+                                colorScheme={'blackAlpha'}
+                                textColor={useColorModeValue('gray.700', 'gray.200')}
+                                maxW={'35%'}
+                                onClick={function () {
+                                    window.open('https://github.com/71xn/', '_blank');
+                                }}>
+                                GitHub
+                            </Button>
+                            <Button
+                                leftIcon={<Icon as={FiGitlab} color={'orange'}/>}
+                                variant={'outline'}
+                                textColor={'orange'}
+                                maxW={'35%'}
+                                onClick={function () {
+                                    window.open('https://stgit.dcs.gla.ac.uk/2737719l', '_blank');
+                                }}>
+                                Gitlab
+                            </Button>
+                            <Button
+                                leftIcon={<Icon as={FaFacebook}/>}
+                                colorScheme={'facebook'}
+                                textColor={useColorModeValue('gray.200', 'gray.700')}
+                                maxW={'35%'}
+                                onClick={function () {
+                                    window.open('https://facebook.com/finn.lestrange', '_blank');
+                                }}>
+                                Facebook
+                            </Button>
+                            <Button
+                                leftIcon={<Icon as={FaInstagram}/>}
+                                colorScheme={'pink'}
+                                textColor={useColorModeValue('gray.200', 'gray.700')}
+                                maxW={'35%'}
+                                onClick={function () {
+                                    window.open('https://instaram.com/finn.lestrange', '_blank');
+                                }}>
+                                Instagram
+                            </Button>
+                            <Button mr={3} id={"email-button"} maxW={'35%'} leftIcon={<Icon as={FcLink}/>} variant='outline'
+                                    onClick={function () {
+                                        copyTextToClipBoard('info@finnlestrange.tech');
+                                        document.getElementById('email-button').innerHTML = `✅&nbsp; Copied!`;
+                                    }
+                                    }>Copy Email</Button>
+
+                        </VStack>
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button colorScheme='red' leftIcon={<SmallCloseIcon/>} onClick={setContactInfoClosed}>
                             Close
                         </Button>
                     </ModalFooter>

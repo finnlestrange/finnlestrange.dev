@@ -13,7 +13,7 @@ export default function RootLayout({children}) {
     return (
         <html lang="en">
         <head>
-            <title>Finn Lestrange - Personal Porfolio</title>
+            <title>Finn Lestrange - Personal Portfolio</title>
         </head>
         <body>
         <CacheProvider>

@@ -101,7 +101,6 @@ export default function Home() {
                 </Text>
                 <UniversityProjects/>
             </PageSection>
-
         </Container>
     )
 }
