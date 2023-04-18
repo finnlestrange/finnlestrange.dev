@@ -144,7 +144,7 @@ export default function GithubProjects() {
                         'These vary from data export plugins for google drive scripts, to modifications and feature additions to the default user experience.'
                     }
                     link={"https://github.com/InternationalSchoolAberdeen/ISAPowerSchoolPlugins"}
-                    linkText={"ISAPowerSchoolPlugins"}
+                    linkText={"GitHub Repo"}
                     buttonIcon={FaGithub}
                 />
                 <Feature
