@@ -24,9 +24,12 @@ import {
     FcKey, FcGoogle
 } from "react-icons/fc";
 
-const Feature = ({ title, text, icon, link, linkText, buttonIcon }) => {
+const Feature = ({ title, text, icon, link, linkText, buttonIcon, height }) => {
     return (
-        <Stack>
+        <Stack
+            position={"relative"}
+            h={height}
+        >
             <Flex
                 w={16}
                 h={16}
@@ -41,9 +44,10 @@ const Feature = ({ title, text, icon, link, linkText, buttonIcon }) => {
             <Text fontWeight={600}>{title}</Text>
             <Text color={'gray.600'}>{text}</Text>
             <Box
-                position={"relative"}
+                display={"inline-block"}
+                position={"absolute"}
                 bottom={0}
-                left={0}
+                pt={20}
             >
                 {linkText != null ? (
                     <Link href={link} target={"_blank"}>
@@ -101,6 +105,7 @@ export default function GithubProjects() {
                     link={"#"}
                     linkText={"Repo Coming Soon ..."}
                     buttonIcon={FaGithub}
+                    height={"calc(50vh)"}
                 />
                 <Feature
                     icon={<Icon as={FcGlobe} w={10} h={10} />}
@@ -112,17 +117,19 @@ export default function GithubProjects() {
                     link={"https://github.com/71xn/"}
                     linkText={"Source Code"}
                     buttonIcon={FaGithub}
+                    height={"calc(50vh)"}
                 />
                 <Feature
                     icon={<Icon as={FcAlarmClock} w={10} h={10} />}
                     title={'React.js Pomodoro Timer'}
                     text={
                         'I built a custom react.js pomodoro timer to learn javascript features such as localstorage, react hooks and webworkers.' +
-                        ' I also used this as an oportunity to learn about DNS and cloudflare pages, for automated ci/cd.'
+                        ' I also used this as an oportunity to learn about DNS and cloudflare.'
                     }
                     link={"https://pomodoro.finnlestrange.tech"}
                     linkText={"Live Demo"}
                     buttonIcon={FcApproval}
+                    height={"calc(50vh)"}
                 />
                 {/*Row 2*/}
                 <Feature
@@ -135,7 +142,8 @@ export default function GithubProjects() {
                 link={"https://finnlestrange.pythonanywhere.com/"}
                 linkText={"Live Demo"}
                 buttonIcon={FcApproval}
-            />
+                height={"calc(55vh)"}
+                />
                 <Feature
                     icon={<Icon as={FcDataEncryption} w={10} h={10} />}
                     title={'Custom PowerSchool Plugins'}
@@ -146,6 +154,7 @@ export default function GithubProjects() {
                     link={"https://github.com/InternationalSchoolAberdeen/ISAPowerSchoolPlugins"}
                     linkText={"GitHub Repo"}
                     buttonIcon={FaGithub}
+                    height={"calc(55vh)"}
                 />
                 <Feature
                     icon={<Icon as={FiGitlab} color={"orange"} w={10} h={10} />}
@@ -157,6 +166,7 @@ export default function GithubProjects() {
                     link={"https://stgit.dcs.gla.ac.uk/2737719l"}
                     linkText={"DCS GitLab"}
                     buttonIcon={FiGitlab}
+                    height={"calc(55vh)"}
                 />
                 <Feature
                     icon={<Icon as={FcDocument} w={10} h={10} />}
@@ -169,6 +179,7 @@ export default function GithubProjects() {
                     link={"https://github.com/71xn/ibcs-ia"}
                     linkText={"Source Code"}
                     buttonIcon={FaGithub}
+                    height={"calc(60vh)"}
                 />
                 <Feature
                     icon={<Icon as={FcKey} w={10} h={10} />}
@@ -180,6 +191,7 @@ export default function GithubProjects() {
                     link={"/files/EE.pdf"}
                     linkText={"Essay PDF"}
                     buttonIcon={FcKindle}
+                    height={"calc(60vh)"}
                 />
                 <Feature
                     icon={<Icon as={FcGoogle} w={10} h={10} />}
@@ -191,6 +203,7 @@ export default function GithubProjects() {
                     link={"https://github.com/InternationalSchoolAberdeen/DriveAPIFileUploadJava"}
                     linkText={"Source Code"}
                     buttonIcon={FaGithub}
+                    height={"calc(60vh)"}
                 />
 
             </SimpleGrid>

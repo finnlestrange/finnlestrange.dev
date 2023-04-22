@@ -23,12 +23,12 @@ import Link from "next/link";
 const Card = ({ heading, description, icon }) => {
     return (
         <Box
-            maxW={{ base: 'full', md: '250px' }}
+            maxW={{ base: 'full', md: '197px' }}
             w={'full'}
             borderWidth="1px"
             borderRadius="lg"
             overflow="hidden"
-            p={5}>
+            p={3}>
             <Stack align={'start'} spacing={2}>
                 <Flex
                     w={16}
@@ -54,8 +54,8 @@ const Card = ({ heading, description, icon }) => {
 export default function UniversityProjects() {
     return (
         <Box p={4}>
-            <Container maxW={'100%'} mt={5}>
-                <Flex flexWrap="wrap" gridGap={6} justify="center">
+            <Container maxW={'100%'} minW={"100%"} mt={5}>
+                <Flex flexWrap="wrap" gridGap={4} justify="center">
                     <Card
                         heading={'Full Stack To-Do App'}
                         icon={<Icon as={FcTodoList} w={10} h={10} />}
@@ -78,6 +78,7 @@ export default function UniversityProjects() {
                         description={
                             'I have experience working with and designing relational databases using MySQL, SQLite & OracleSQL.'
                         }/>
+                    <br />
                     <Link
                     href={'/projects'}
                     >
