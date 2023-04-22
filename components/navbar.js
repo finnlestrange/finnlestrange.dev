@@ -202,12 +202,13 @@ const NavBar = (props) => {
                     <ModalHeader>Contact Me</ModalHeader>
                     <ModalCloseButton/>
                     <ModalBody>
-                        <VStack spacing={2} align={"left"}>
+                        <VStack spacing={2} align={"center"}>
                             <Button
                                 leftIcon={<Icon as={FaGithub}/>}
                                 colorScheme={'blackAlpha'}
                                 textColor={useColorModeValue('gray.700', 'gray.200')}
-                                maxW={'35%'}
+                                maxW={'40%'}
+                                w={'40%'}
                                 onClick={function () {
                                     window.open('https://github.com/71xn/', '_blank');
                                 }}>
@@ -217,17 +218,19 @@ const NavBar = (props) => {
                                 leftIcon={<Icon as={FiGitlab} color={'orange'}/>}
                                 variant={'outline'}
                                 textColor={'orange'}
-                                maxW={'35%'}
+                                maxW={'40%'}
+                                w={'40%'}
                                 onClick={function () {
                                     window.open('https://stgit.dcs.gla.ac.uk/2737719l', '_blank');
                                 }}>
-                                Gitlab
+                                Gitlab&nbsp;&nbsp;&nbsp;
                             </Button>
                             <Button
                                 leftIcon={<Icon as={FaFacebook}/>}
                                 colorScheme={'facebook'}
                                 textColor={useColorModeValue('gray.200', 'gray.700')}
-                                maxW={'35%'}
+                                maxW={'40%'}
+                                w={'40%'}
                                 onClick={function () {
                                     window.open('https://facebook.com/finn.lestrange', '_blank');
                                 }}>
@@ -237,13 +240,14 @@ const NavBar = (props) => {
                                 leftIcon={<Icon as={FaInstagram}/>}
                                 colorScheme={'pink'}
                                 textColor={useColorModeValue('gray.200', 'gray.700')}
-                                maxW={'35%'}
+                                maxW={'40%'}
+                                w={'40%'}
                                 onClick={function () {
                                     window.open('https://instaram.com/finn.lestrange', '_blank');
                                 }}>
                                 Instagram
                             </Button>
-                            <Button mr={3} id={"email-button"} maxW={'35%'} leftIcon={<Icon as={FcLink}/>} variant='outline'
+                            <Button mr={3} id={"email-button"} maxW={"40%"} w={'40%'} leftIcon={<Icon as={FcLink}/>} variant='outline'
                                     onClick={function () {
                                         copyTextToClipBoard('info@finnlestrange.tech');
                                         document.getElementById('email-button').innerHTML = `✅&nbsp; Copied!`;

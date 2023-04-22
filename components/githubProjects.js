@@ -102,10 +102,10 @@ export default function GithubProjects() {
                         'This is a project that I have been working on over the spring break. I converted an old workstation' +
                         ' into a custom hackintosh. I am still collating all the notes and files into a single repo.'
                     }
-                    link={"#"}
-                    linkText={"Repo Coming Soon ..."}
+                    link={"https://github.com/71xn/x99-hackintosh"}
+                    linkText={"Repo"}
                     buttonIcon={FaGithub}
-                    height={"calc(50vh)"}
+                    height={"calc(45vh)"}
                 />
                 <Feature
                     icon={<Icon as={FcGlobe} w={10} h={10} />}
@@ -117,7 +117,7 @@ export default function GithubProjects() {
                     link={"https://github.com/71xn/"}
                     linkText={"Source Code"}
                     buttonIcon={FaGithub}
-                    height={"calc(50vh)"}
+                    height={"calc(45vh)"}
                 />
                 <Feature
                     icon={<Icon as={FcAlarmClock} w={10} h={10} />}
@@ -129,7 +129,7 @@ export default function GithubProjects() {
                     link={"https://pomodoro.finnlestrange.tech"}
                     linkText={"Live Demo"}
                     buttonIcon={FcApproval}
-                    height={"calc(50vh)"}
+                    height={"calc(45vh)"}
                 />
                 {/*Row 2*/}
                 <Feature
