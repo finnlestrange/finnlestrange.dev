@@ -30,7 +30,7 @@ import {
 import {HamburgerIcon, MoonIcon, SunIcon, SmallCloseIcon} from "@chakra-ui/icons";
 import {AnimatePresence, motion} from "framer-motion";
 import {FcBusinessContact, FcDiploma2, FcLink} from "react-icons/fc";
-import {FaFacebook} from "react-icons/all";
+import {FaFacebook, FaFileDownload} from "react-icons/all";
 import {FaGithub, FaInstagram} from "react-icons/fa";
 import {FiGitlab} from "react-icons/fi";
 
@@ -184,6 +184,11 @@ const NavBar = (props) => {
                         <embed src={'/files/CV.pdf'} width={'100%'} height={'100%'}/>
                     </ModalBody>
                     <ModalFooter>
+                        <Button leftIcon={<FaFileDownload/>} colorScheme='blue' mr={3} onClick={function () {
+                            window.open("/files/CV.pdf", "_blank");
+                        }}>
+                            Download
+                        </Button>
                         <Button leftIcon={<SmallCloseIcon/>} colorScheme='red' mr={3} onClick={setCVClose}>
                             Close
                         </Button>
