@@ -3,7 +3,7 @@
 import {Link as NextLink} from "@chakra-ui/next-js";
 import {
     Button,
-    HStack, Icon,
+    HStack, Icon, LightMode,
     MenuDivider,
     Modal, ModalBody, ModalCloseButton,
     ModalContent, ModalFooter, ModalHeader,
@@ -115,11 +115,13 @@ const NavBar = (props) => {
 
                     <Flex alignItems={'center'}>
                         <Stack direction={'row'} spacing={7}>
-                            <Button display={{sm: 'none', md: 'none', lg: 'inline-flex'}} leftIcon={<Icon as={FcBusinessContact}/>}
+                            <Button display={{sm: 'none', md: 'none', lg: 'inline-flex'}}
+                                    leftIcon={<Icon as={FcBusinessContact}/>}
                                     onClick={setContactInfoOpen}>
                                 Contact
                             </Button>
-                            <Button display={{sm: 'none', md: 'none', lg: 'inline-flex'}} leftIcon={<Icon as={FcDiploma2}/>}
+                            <Button display={{sm: 'none', md: 'none', lg: 'inline-flex'}}
+                                    leftIcon={<Icon as={FcDiploma2}/>}
                                     onClick={setCVOpen}>
                                 CV
                             </Button>
@@ -145,7 +147,7 @@ const NavBar = (props) => {
 
                             <Menu onClose={onClose}>
                                 <MenuButton
-                                    display={{base: 'inline-flex', md: 'inline-flex', sm: 'inline-flex', lg:'none'}}
+                                    display={{base: 'inline-flex', md: 'inline-flex', sm: 'inline-flex', lg: 'none'}}
                                     as={IconButton}
                                     icon={isOpen ? <SmallCloseIcon/> : <HamburgerIcon/>}
                                     onClick={isOpen ? onClose : onOpen}
@@ -184,14 +186,16 @@ const NavBar = (props) => {
                         <embed src={'/files/CV.pdf'} width={'100%'} height={'100%'}/>
                     </ModalBody>
                     <ModalFooter>
-                        <Button leftIcon={<FaFileDownload/>} colorScheme='blue' mr={3} onClick={function () {
-                            window.open("/files/CV.pdf", "_blank");
-                        }}>
-                            Download
-                        </Button>
-                        <Button leftIcon={<SmallCloseIcon/>} colorScheme='red' mr={3} onClick={setCVClose}>
-                            Close
-                        </Button>
+                        <LightMode>
+                            <Button leftIcon={<FaFileDownload/>} colorScheme='blue' mr={3} onClick={function () {
+                                window.open("/files/CV.pdf", "_blank");
+                            }}>
+                                Download
+                            </Button>
+                            <Button leftIcon={<SmallCloseIcon/>} colorScheme='red' mr={3} onClick={setCVClose}>
+                                Close
+                            </Button>
+                        </LightMode>
                     </ModalFooter>
                 </ModalContent>
             </Modal>
@@ -208,63 +212,76 @@ const NavBar = (props) => {
                     <ModalCloseButton/>
                     <ModalBody>
                         <VStack spacing={2} align={"center"}>
-                            <Button
-                                leftIcon={<Icon as={FaGithub}/>}
-                                colorScheme={'blackAlpha'}
-                                textColor={useColorModeValue('gray.700', 'gray.200')}
-                                maxW={'40%'}
-                                w={'40%'}
-                                onClick={function () {
-                                    window.open('https://github.com/71xn/', '_blank');
-                                }}>
-                                GitHub
-                            </Button>
-                            <Button
-                                leftIcon={<Icon as={FiGitlab} color={'orange'}/>}
-                                variant={'outline'}
-                                textColor={'orange'}
-                                maxW={'40%'}
-                                w={'40%'}
-                                onClick={function () {
-                                    window.open('https://stgit.dcs.gla.ac.uk/2737719l', '_blank');
-                                }}>
-                                Gitlab&nbsp;&nbsp;&nbsp;
-                            </Button>
-                            <Button
-                                leftIcon={<Icon as={FaFacebook}/>}
-                                colorScheme={'facebook'}
-                                textColor={useColorModeValue('gray.200', 'gray.700')}
-                                maxW={'40%'}
-                                w={'40%'}
-                                onClick={function () {
-                                    window.open('https://facebook.com/finn.lestrange', '_blank');
-                                }}>
-                                Facebook
-                            </Button>
-                            <Button
-                                leftIcon={<Icon as={FaInstagram}/>}
-                                colorScheme={'pink'}
-                                textColor={useColorModeValue('gray.200', 'gray.700')}
-                                maxW={'40%'}
-                                w={'40%'}
-                                onClick={function () {
-                                    window.open('https://instaram.com/finn.lestrange', '_blank');
-                                }}>
-                                Instagram
-                            </Button>
-                            <Button mr={3} id={"email-button"} maxW={"40%"} w={'40%'} leftIcon={<Icon as={FcLink}/>} variant='outline'
+                            <LightMode>
+                                <Button
+                                    leftIcon={<Icon as={FaGithub}/>}
+                                    textColor={useColorModeValue('gray.200', 'gray.200')}
+                                    bg={'#1D232E'}
+                                    _hover={{
+                                      bg: '#3B3B3B'
+                                    }}
+                                    maxW={'40%'}
+                                    w={'40%'}
                                     onClick={function () {
-                                        copyTextToClipBoard('info@finnlestrange.tech');
-                                        document.getElementById('email-button').innerHTML = `✅&nbsp; Copied!`;
-                                    }
-                                    }>Copy Email</Button>
+                                        window.open('https://github.com/71xn/', '_blank');
+                                    }}>
+                                    GitHub
+                                </Button>
+                                <Button
+                                    leftIcon={<Icon as={FiGitlab} color={'orange'}/>}
+                                    textColor={'orange'}
+                                    bg={'#1D232E'}
+                                    _hover={{
+                                        bg: '#3B3B3B'
+                                    }}
+                                    maxW={'40%'}
+                                    w={'40%'}
+                                    onClick={function () {
+                                        window.open('https://stgit.dcs.gla.ac.uk/2737719l', '_blank');
+                                    }}>
+                                    Gitlab&nbsp;&nbsp;&nbsp;
+                                </Button>
+                                <Button
+                                    leftIcon={<Icon as={FaFacebook}/>}
+                                    colorScheme={'facebook'}
+                                    textColor={useColorModeValue('gray.200', 'gray.200')}
+                                    maxW={'40%'}
+                                    w={'40%'}
+                                    onClick={function () {
+                                        window.open('https://facebook.com/finn.lestrange', '_blank');
+                                    }}>
+                                    Facebook
+                                </Button>
+                                <Button
+                                    leftIcon={<Icon as={FaInstagram}/>}
+                                    colorScheme={'pink'}
+                                    textColor={useColorModeValue('gray.200', 'gray.200')}
+                                    maxW={'40%'}
+                                    w={'40%'}
+                                    onClick={function () {
+                                        window.open('https://instaram.com/finn.lestrange', '_blank');
+                                    }}>
+                                    Instagram
+                                </Button>
+                                <Button mr={3} id={"email-button"} maxW={"40%"} w={'40%'} leftIcon={<Icon as={FcLink}/>}
+                                        variant='outline'
+                                        colorScheme={'blackAlpha'}
+                                        textColor={useColorModeValue("gray.700", "gray.200")}
+                                        onClick={function () {
+                                            copyTextToClipBoard('info@finnlestrange.tech');
+                                            document.getElementById('email-button').innerHTML = `✅&nbsp; Copied!`;
+                                        }
+                                        }>Copy Email</Button>
 
+                            </LightMode>
                         </VStack>
                     </ModalBody>
                     <ModalFooter>
-                        <Button colorScheme='red' leftIcon={<SmallCloseIcon/>} onClick={setContactInfoClosed}>
-                            Close
-                        </Button>
+                        <LightMode>
+                            <Button colorScheme='red' leftIcon={<SmallCloseIcon/>} onClick={setContactInfoClosed}>
+                                Close
+                            </Button>
+                        </LightMode>
                     </ModalFooter>
                 </ModalContent>
             </Modal>
