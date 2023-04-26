@@ -49,7 +49,7 @@ const colors = {
 }
 
 const config = {
-    initialColorMode: 'dark',
+    initialColorMode: 'system',
     useSystemColorMode: false
 }
 

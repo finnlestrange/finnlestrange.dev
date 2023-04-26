@@ -1,6 +1,5 @@
-import {ReactElement} from 'react';
 import {Box, SimpleGrid, Icon, Text, Stack, Flex, useColorModeValue} from '@chakra-ui/react';
-import {FcAssistant, FcCommandLine, FcDeployment, FcDonate, FcInTransit, FcLinux} from 'react-icons/fc';
+import {FcAssistant, FcCommandLine, FcDeployment} from 'react-icons/fc';
 
 
 const Feature = ({title, text, icon}) => {
@@ -18,7 +17,7 @@ const Feature = ({title, text, icon}) => {
                 {icon}
             </Flex>
             <Text fontWeight={600}>{title}</Text>
-            <Text color={'gray.600'}>{text}</Text>
+            <Text color={useColorModeValue('gray.600', "whiteAlpha.600")}>{text}</Text>
         </Stack>
     );
 };
@@ -26,7 +25,7 @@ const Feature = ({title, text, icon}) => {
 export default function FeaturedProjects() {
     return (
         <Box p={4}>
-            <SimpleGrid columns={{base: 1, md: 3}} spacing={10}>
+            <SimpleGrid textColor={useColorModeValue("gray.900", "whiteAlpha.800")} columns={{base: 1, md: 3}} spacing={10}>
                 <Feature
                     icon={<Icon as={FcAssistant} w={10} h={10}/>}
                     title={'General IT Support'}

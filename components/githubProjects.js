@@ -24,12 +24,9 @@ import {
     FcKey, FcGoogle
 } from "react-icons/fc";
 
-const Feature = ({ title, text, icon, link, linkText, buttonIcon, height }) => {
+const Feature = ({ title, text, icon, link, linkText, buttonIcon }) => {
     return (
-        <Stack
-            position={"relative"}
-            h={height}
-        >
+        <Stack>
             <Flex
                 w={16}
                 h={16}
@@ -43,12 +40,7 @@ const Feature = ({ title, text, icon, link, linkText, buttonIcon, height }) => {
             </Flex>
             <Text fontWeight={600}>{title}</Text>
             <Text color={'gray.600'}>{text}</Text>
-            <Box
-                display={"inline-block"}
-                position={"absolute"}
-                bottom={0}
-                pt={20}
-            >
+            <Box pt={5}>
                 {linkText != null ? (
                     <Link href={link} target={"_blank"}>
                         <Button leftIcon={<Icon as={buttonIcon} />}>
@@ -105,7 +97,6 @@ export default function GithubProjects() {
                     link={"https://github.com/71xn/x99-hackintosh"}
                     linkText={"Repo"}
                     buttonIcon={FaGithub}
-                    height={"calc(45vh)"}
                 />
                 <Feature
                     icon={<Icon as={FcGlobe} w={10} h={10} />}
@@ -117,7 +108,6 @@ export default function GithubProjects() {
                     link={"https://github.com/71xn/"}
                     linkText={"Source Code"}
                     buttonIcon={FaGithub}
-                    height={"calc(45vh)"}
                 />
                 <Feature
                     icon={<Icon as={FcAlarmClock} w={10} h={10} />}
@@ -129,7 +119,6 @@ export default function GithubProjects() {
                     link={"https://pomodoro.finnlestrange.tech"}
                     linkText={"Live Demo"}
                     buttonIcon={FcApproval}
-                    height={"calc(45vh)"}
                 />
                 {/*Row 2*/}
                 <Feature
@@ -142,7 +131,6 @@ export default function GithubProjects() {
                 link={"https://finnlestrange.pythonanywhere.com/"}
                 linkText={"Live Demo"}
                 buttonIcon={FcApproval}
-                height={"calc(55vh)"}
                 />
                 <Feature
                     icon={<Icon as={FcDataEncryption} w={10} h={10} />}
@@ -154,7 +142,6 @@ export default function GithubProjects() {
                     link={"https://github.com/InternationalSchoolAberdeen/ISAPowerSchoolPlugins"}
                     linkText={"GitHub Repo"}
                     buttonIcon={FaGithub}
-                    height={"calc(55vh)"}
                 />
                 <Feature
                     icon={<Icon as={FiGitlab} color={"orange"} w={10} h={10} />}
@@ -166,7 +153,6 @@ export default function GithubProjects() {
                     link={"https://stgit.dcs.gla.ac.uk/2737719l"}
                     linkText={"DCS GitLab"}
                     buttonIcon={FiGitlab}
-                    height={"calc(55vh)"}
                 />
                 <Feature
                     icon={<Icon as={FcDocument} w={10} h={10} />}
@@ -179,7 +165,6 @@ export default function GithubProjects() {
                     link={"https://github.com/71xn/ibcs-ia"}
                     linkText={"Source Code"}
                     buttonIcon={FaGithub}
-                    height={"calc(60vh)"}
                 />
                 <Feature
                     icon={<Icon as={FcKey} w={10} h={10} />}
@@ -191,7 +176,6 @@ export default function GithubProjects() {
                     link={"/files/EE.pdf"}
                     linkText={"Essay PDF"}
                     buttonIcon={FcKindle}
-                    height={"calc(60vh)"}
                 />
                 <Feature
                     icon={<Icon as={FcGoogle} w={10} h={10} />}
@@ -203,7 +187,6 @@ export default function GithubProjects() {
                     link={"https://github.com/InternationalSchoolAberdeen/DriveAPIFileUploadJava"}
                     linkText={"Source Code"}
                     buttonIcon={FaGithub}
-                    height={"calc(60vh)"}
                 />
 
             </SimpleGrid>
