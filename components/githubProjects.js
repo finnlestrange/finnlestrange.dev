@@ -105,7 +105,7 @@ export default function GithubProjects() {
                         'This portfolio has been my first deep dive into working with a full stack next.js application. I have ' +
                         'also used this oportunity to learn about the Chakra UI library, and all the new features in Next.js 13.'
                     }
-                    link={"https://github.com/71xn/"}
+                    link={"https://github.com/71xn/finnlestrange.tech"}
                     linkText={"Source Code"}
                     buttonIcon={FaGithub}
                 />
