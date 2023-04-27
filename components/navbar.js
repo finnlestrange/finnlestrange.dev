@@ -156,7 +156,7 @@ const NavBar = (props) => {
                                 <MenuList alignItems={'center'}>
                                     <MenuItem as={NextLink} href={"/"}>Home</MenuItem>
                                     <MenuDivider/>
-                                    <MenuItem as={NextLink} href={"projects/"}>Projects</MenuItem>
+                                    <MenuItem as={NextLink} href={"/projects"}>Projects</MenuItem>
                                     <MenuItem onClick={setContactInfoOpen}>
                                         <Icon as={FcBusinessContact}/> &nbsp; Contact</MenuItem>
                                     <MenuItem onClick={setCVOpen}>
