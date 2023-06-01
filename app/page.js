@@ -30,7 +30,7 @@ export default function Home() {
                     backdropFilter: 'blur(10px)',
                 }}>
                 {/*Blurb Container*/}
-                👋 &nbsp; Hey, I&apos;m a part-time Developer & Computer Science student at the University of Glasgow.
+                👋 &nbsp; Hey, I&apos;m a Software Engineer & Computer Science student at the University of Glasgow.
             </Box>
             <Box>
                 {/*Where the 3D model will sit*/}
@@ -70,14 +70,27 @@ export default function Home() {
             </Box>
             <PageSection delay={0.1}>
                 <Heading as={'h3'} fontFamily={"mono"} variant={'section-title'}>
-                    Work
+                    Work & Experience
+                </Heading>
+                <Heading as={'h3'} fontFamily={"mono"} variant={'section-subtitle'}>
+                    University of Glasgow: <i>(June 2023 - Present)</i>
                 </Heading>
                 <Text
                     fontSize={'lg'}
                 >
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I currently work as a Developer at the (<Link
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I&apos;m currently working as a software engineer at the <Link
+                    href={"https://guss.org.uk"}>Glasgow University Software Service</Link>.
+                </Text>
+                <br/>
+                <Heading as={'h4'} fontFamily={"mono"} variant={'section-subtitle'}>
+                    International School of Aberdeen: <i>(May 2019 - June 2023)</i>
+                </Heading>
+                <Text
+                    fontSize={'lg'}
+                >
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I worked as a Developer at the (<Link
                     href={"https://isa.aberdeen.sch.uk"}>International School Aberdeen</Link>)
-                    where I work on a variety of projects, including maintaining the student information system
+                    where I worked on a variety of projects, including maintaining the student information system
                     (PowerSchool),
                     various internal tools and GSuite Automations.
                 </Text>

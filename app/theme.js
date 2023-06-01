@@ -14,13 +14,18 @@ const components = {
         variants: {
             'section-title': {
                 textDecoration: 'underline',
-                fontSize: 20,
+                fontSize: 25,
                 textUnderlineOffset: 6,
                 textDecorationColor: '#525252',
                 textDecorationThickness: 4,
                 marginTop: 3,
-                marginBottom: 4
-            }
+                marginBottom: 5
+            },
+            'section-subtitle': {
+                fontSize: 18,
+                marginTop: 3,
+                marginBottom: 1
+            },
         }
     },
     Link: {
