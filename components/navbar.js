@@ -263,6 +263,15 @@ const NavBar = (props) => {
                                     }}>
                                     Instagram
                                 </Button>
+                                <Button mr={3} id={"work-email-button"} maxW={"40%"} w={'40%'} leftIcon={<Icon as={FcLink}/>}
+                                        variant='outline'
+                                        colorScheme={'blackAlpha'}
+                                        textColor={useColorModeValue("gray.700", "gray.200")}
+                                        onClick={function () {
+                                            copyTextToClipBoard('finn.lestrange@glasgow.ac.uk');
+                                            document.getElementById('email-button').innerHTML = `✅&nbsp; Copied!`;
+                                        }
+                                        }>Work Email</Button>
                                 <Button mr={3} id={"email-button"} maxW={"40%"} w={'40%'} leftIcon={<Icon as={FcLink}/>}
                                         variant='outline'
                                         colorScheme={'blackAlpha'}
@@ -271,8 +280,7 @@ const NavBar = (props) => {
                                             copyTextToClipBoard('info@finnlestrange.tech');
                                             document.getElementById('email-button').innerHTML = `✅&nbsp; Copied!`;
                                         }
-                                        }>Copy Email</Button>
-
+                                        }>Personal Email</Button>
                             </LightMode>
                         </VStack>
                     </ModalBody>
