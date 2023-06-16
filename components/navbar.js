@@ -98,7 +98,7 @@ const NavBar = (props) => {
                                     fontWeight={'bold'}
                                     fontSize={'lg'}
                                 >
-                                    finnlestrange.tech
+                                    finnlestrange.dev
                                 </Text>
                             </Box>
                         </NextLink>
@@ -269,7 +269,7 @@ const NavBar = (props) => {
                                         textColor={useColorModeValue("gray.700", "gray.200")}
                                         onClick={function () {
                                             copyTextToClipBoard('finn.lestrange@glasgow.ac.uk');
-                                            document.getElementById('email-button').innerHTML = `✅&nbsp; Copied!`;
+                                            document.getElementById('work-email-button').innerHTML = `✅&nbsp; Copied!`;
                                         }
                                         }>Work Email</Button>
                                 <Button mr={3} id={"email-button"} maxW={"40%"} w={'40%'} leftIcon={<Icon as={FcLink}/>}
