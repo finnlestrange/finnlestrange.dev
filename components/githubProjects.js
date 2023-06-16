@@ -116,7 +116,7 @@ export default function GithubProjects() {
                         'I built a custom react.js pomodoro timer to learn javascript features such as localstorage, react hooks and webworkers.' +
                         ' I also used this as an oportunity to learn about DNS and cloudflare.'
                     }
-                    link={"https://pomodoro.finnlestrange.tech"}
+                    link={"https://pomodoro.finnlestrange.dev"}
                     linkText={"Live Demo"}
                     buttonIcon={FcApproval}
                 />
