@@ -83,14 +83,14 @@ export default function Home() {
                     href={"https://guss.org.uk"}>Glasgow University Software Service</Link>. I work on various projects
                     for both external and internal clients. My main focus is the MyPath Reporting
                     System, which is used by the University of Glasgow to track student progress and provide feedback.
-                    I have a heavy focus on the backend / server engineering, but I also work on the frontend and ensuring
-                    the security and updates of the various aspects of the application.
+                    I have a heavy focus on the backend / server engineering, but I also work on the frontend, ensuring
+                    the security and updates of the various aspects of the application are kept in check.
                 </Text>
                 <br />
                 <SoftwareEngineeringProjects />
                 <br/>
                 <Heading as={'h4'} fontFamily={"mono"} variant={'section-subtitle'}>
-                    International School of Aberdeen: <i>(May 2019 - June 2023)</i>
+                    International School of Aberdeen: <i>(May 2019 - Present)</i>
                 </Heading>
                 <Text
                     fontSize={'lg'}
