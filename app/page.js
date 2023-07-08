@@ -4,6 +4,7 @@ import {Box, Container, Heading, Link, Text, useColorModeValue} from "@chakra-ui
 import PageSection from "@/components/pageSection";
 import FeaturedProjects from "@/components/featuredProjects";
 import UniversityProjects from "@/components/universityProjects";
+import SoftwareEngineeringProjects from "@/components/softwareEngineeringProjects";
 
 export default function Home() {
     return (
@@ -79,8 +80,14 @@ export default function Home() {
                     fontSize={'lg'}
                 >
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I&apos;m currently working as a software engineer at the <Link
-                    href={"https://guss.org.uk"}>Glasgow University Software Service</Link>.
+                    href={"https://guss.org.uk"}>Glasgow University Software Service</Link>. I work on various projects
+                    for both external and internal clients. My main focus is the MyPath Reporting
+                    System, which is used by the University of Glasgow to track student progress and provide feedback.
+                    I have a heavy focus on the backend / server engineering, but I also work on the frontend and ensuring
+                    the security and updates of the various aspects of the application.
                 </Text>
+                <br />
+                <SoftwareEngineeringProjects />
                 <br/>
                 <Heading as={'h4'} fontFamily={"mono"} variant={'section-subtitle'}>
                     International School of Aberdeen: <i>(May 2019 - June 2023)</i>

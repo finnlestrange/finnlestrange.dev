@@ -109,6 +109,7 @@ const NavBar = (props) => {
                             pl={4}
                         >
                             <LinkElement path={pathname} href={'/projects'}>Projects</LinkElement>
+                            <LinkElement path={pathname} target={'_blank'} href={'https://www.gla.ac.uk/schools/computing/staff/index.html/staffcontact/person/4edee7e28797'}>UofG</LinkElement>
 
                         </HStack>
                     </HStack>
