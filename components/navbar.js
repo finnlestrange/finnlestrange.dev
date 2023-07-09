@@ -33,6 +33,8 @@ import {FcBusinessContact, FcDiploma2, FcLink} from "react-icons/fc";
 import {FaFacebook, FaFileDownload} from "react-icons/all";
 import {FaGithub, FaInstagram} from "react-icons/fa";
 import {FiGitlab} from "react-icons/fi";
+import {useEffect} from "react";
+import {load} from "three/addons/libs/opentype.module";
 
 const LinkElement = ({href, path, target, children, ...props}) => {
     const active = path === href;
@@ -66,6 +68,7 @@ const copyTextToClipBoard = (text) => {
 
 
 const NavBar = (props) => {
+
     const {pathname} = props;
     const {colorMode, toggleColorMode} = useColorMode();
     const {isOpen, onOpen, onClose} = useDisclosure();
@@ -109,7 +112,8 @@ const NavBar = (props) => {
                             pl={4}
                         >
                             <LinkElement path={pathname} href={'/projects'}>Projects</LinkElement>
-                            <LinkElement path={pathname} target={'_blank'} href={'https://www.gla.ac.uk/schools/computing/staff/index.html/staffcontact/person/4edee7e28797'}>UofG</LinkElement>
+                            <LinkElement path={pathname} target={'_blank'}
+                                         href={'https://www.gla.ac.uk/schools/computing/staff/index.html/staffcontact/person/4edee7e28797'}>UofG</LinkElement>
 
                         </HStack>
                     </HStack>
@@ -189,7 +193,9 @@ const NavBar = (props) => {
                     <ModalFooter>
                         <LightMode>
                             <Button leftIcon={<FaFileDownload/>} colorScheme='blue' mr={3} onClick={function () {
-                                window.open("/files/CV.pdf", "_blank");
+                                if (typeof window !== 'undefined') {
+                                    window.open("/files/CV.pdf", "_blank");
+                                }
                             }}>
                                 Download
                             </Button>
@@ -219,12 +225,14 @@ const NavBar = (props) => {
                                     textColor={useColorModeValue('gray.200', 'gray.200')}
                                     bg={'#1D232E'}
                                     _hover={{
-                                      bg: '#3B3B3B'
+                                        bg: '#3B3B3B'
                                     }}
                                     maxW={'40%'}
                                     w={'40%'}
                                     onClick={function () {
-                                        window.open('https://github.com/71xn/', '_blank');
+                                        if (typeof window !== 'undefined') {
+                                            window.open('https://github.com/71xn/', '_blank');
+                                        }
                                     }}>
                                     GitHub
                                 </Button>
@@ -238,7 +246,9 @@ const NavBar = (props) => {
                                     maxW={'40%'}
                                     w={'40%'}
                                     onClick={function () {
-                                        window.open('https://stgit.dcs.gla.ac.uk/2737719l', '_blank');
+                                        if (typeof window !== 'undefined') {
+                                            window.open('https://stgit.dcs.gla.ac.uk/2737719l', '_blank');
+                                        }
                                     }}>
                                     Gitlab&nbsp;&nbsp;&nbsp;
                                 </Button>
@@ -249,7 +259,9 @@ const NavBar = (props) => {
                                     maxW={'40%'}
                                     w={'40%'}
                                     onClick={function () {
-                                        window.open('https://facebook.com/finn.lestrange', '_blank');
+                                        if (typeof window !== 'undefined') {
+                                            window.open('https://facebook.com/finn.lestrange', '_blank');
+                                        }
                                     }}>
                                     Facebook
                                 </Button>
@@ -260,11 +272,14 @@ const NavBar = (props) => {
                                     maxW={'40%'}
                                     w={'40%'}
                                     onClick={function () {
-                                        window.open('https://instaram.com/finn.lestrange', '_blank');
+                                        if (typeof window !== 'undefined') {
+                                            window.open('https://instaram.com/finn.lestrange', '_blank');
+                                        }
                                     }}>
                                     Instagram
                                 </Button>
-                                <Button mr={3} id={"work-email-button"} maxW={"40%"} w={'40%'} leftIcon={<Icon as={FcLink}/>}
+                                <Button mr={3} id={"work-email-button"} maxW={"40%"} w={'40%'}
+                                        leftIcon={<Icon as={FcLink}/>}
                                         variant='outline'
                                         colorScheme={'blackAlpha'}
                                         textColor={useColorModeValue("gray.700", "gray.200")}
