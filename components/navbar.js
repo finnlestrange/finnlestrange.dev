@@ -33,8 +33,6 @@ import {FcBusinessContact, FcDiploma2, FcLink} from "react-icons/fc";
 import {FaFacebook, FaFileDownload} from "react-icons/all";
 import {FaGithub, FaInstagram} from "react-icons/fa";
 import {FiGitlab} from "react-icons/fi";
-import {useEffect} from "react";
-import {load} from "three/addons/libs/opentype.module";
 
 const LinkElement = ({href, path, target, children, ...props}) => {
     const active = path === href;
@@ -112,14 +110,11 @@ const NavBar = (props) => {
                             pl={4}
                         >
                             <LinkElement path={pathname} href={'/projects'}>Projects</LinkElement>
-                            <LinkElement path={pathname} target={'_blank'}
-                                         href={'https://www.gla.ac.uk/schools/computing/staff/index.html/staffcontact/person/4edee7e28797'}>UofG</LinkElement>
-
                         </HStack>
                     </HStack>
 
                     <Flex alignItems={'center'}>
-                        <Stack direction={'row'} spacing={7}>
+                        <Stack direction={'row'} spacing={5}>
                             <Button display={{sm: 'none', md: 'none', lg: 'inline-flex'}}
                                     leftIcon={<Icon as={FcBusinessContact}/>}
                                     onClick={setContactInfoOpen}>
