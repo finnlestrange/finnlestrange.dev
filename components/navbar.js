@@ -101,9 +101,7 @@ const NavBar = (props) => {
                                     fontWeight={'bold'}
                                     fontSize={'lg'}
                                 >
-                                    {
-                                        (window !== "undefined") && window.location.href.indexOf('finnlestrange.tech') > -1 ? 'finnlestrange.tech' : 'finnlestrange.dev'
-                                    }
+                                    finnlestrange.tech
                                 </Text>
                             </Box>
                         </NextLink>
