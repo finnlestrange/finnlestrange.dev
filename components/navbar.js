@@ -222,8 +222,8 @@ const NavBar = (props) => {
                                     _hover={{
                                         bg: '#3B3B3B'
                                     }}
-                                    maxW={'40%'}
-                                    w={'40%'}
+                                    maxW={'50%'}
+                                    w={'50%'}
                                     onClick={function () {
                                         if (typeof window !== 'undefined') {
                                             window.open('https://github.com/71xn/', '_blank');
@@ -238,8 +238,8 @@ const NavBar = (props) => {
                                     _hover={{
                                         bg: '#3B3B3B'
                                     }}
-                                    maxW={'40%'}
-                                    w={'40%'}
+                                    maxW={'50%'}
+                                    w={'50%'}
                                     onClick={function () {
                                         if (typeof window !== 'undefined') {
                                             window.open('https://stgit.dcs.gla.ac.uk/2737719l', '_blank');
@@ -251,8 +251,8 @@ const NavBar = (props) => {
                                     leftIcon={<Icon as={FaFacebook}/>}
                                     colorScheme={'facebook'}
                                     textColor={useColorModeValue('gray.200', 'gray.200')}
-                                    maxW={'40%'}
-                                    w={'40%'}
+                                    maxW={'50%'}
+                                    w={'50%'}
                                     onClick={function () {
                                         if (typeof window !== 'undefined') {
                                             window.open('https://facebook.com/finn.lestrange', '_blank');
@@ -263,9 +263,8 @@ const NavBar = (props) => {
                                 <Button
                                     leftIcon={<Icon as={FaInstagram}/>}
                                     colorScheme={'pink'}
+                                    maxW={"50%"} w={'50%'}
                                     textColor={useColorModeValue('gray.200', 'gray.200')}
-                                    maxW={'40%'}
-                                    w={'40%'}
                                     onClick={function () {
                                         if (typeof window !== 'undefined') {
                                             window.open('https://instaram.com/finn.lestrange', '_blank');
@@ -273,7 +272,7 @@ const NavBar = (props) => {
                                     }}>
                                     Instagram
                                 </Button>
-                                <Button mr={3} id={"work-email-button"} maxW={"40%"} w={'40%'}
+                                <Button mr={3} id={"work-email-button"} maxW={"50%"} w={'50%'}
                                         leftIcon={<Icon as={FcLink}/>}
                                         variant='outline'
                                         colorScheme={'blackAlpha'}
@@ -283,7 +282,7 @@ const NavBar = (props) => {
                                             document.getElementById('work-email-button').innerHTML = `✅&nbsp; Copied!`;
                                         }
                                         }>Work Email</Button>
-                                <Button mr={3} id={"email-button"} maxW={"40%"} w={'40%'} leftIcon={<Icon as={FcLink}/>}
+                                <Button mr={3} id={"email-button"} maxW={"50%"} w={'50%'} leftIcon={<Icon as={FcLink}/>}
                                         variant='outline'
                                         colorScheme={'blackAlpha'}
                                         textColor={useColorModeValue("gray.700", "gray.200")}
