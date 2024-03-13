@@ -58,5 +58,12 @@ const config = {
     useSystemColorMode: false
 }
 
-const theme = extendTheme({config, styles, components, fonts, colors})
+const breakpoints = {
+    sm: '320px',
+    md: '768px',
+    lg: '1024px',
+    xl: '1400px', // Your custom breakpoint
+}
+
+const theme = extendTheme({config, styles, components, fonts, colors, breakpoints})
 export default theme

@@ -106,7 +106,7 @@ const NavBar = (props) => {
                         <HStack
                             as={'nav'}
                             spacing={4}
-                            display={{sm: 'none', md: 'none', lg: 'flex'}}
+                            display={{base: 'none', sm: 'none', md: 'none', lg: 'none', xl: 'flex'}}
                             pl={4}
                         >
                             <LinkElement path={pathname} href={'/projects'}>Projects</LinkElement>
@@ -115,12 +115,12 @@ const NavBar = (props) => {
 
                     <Flex alignItems={'center'}>
                         <Stack direction={'row'} spacing={5}>
-                            <Button display={{sm: 'none', md: 'none', lg: 'inline-flex'}}
+                            <Button display={{base: 'none', sm: 'none', md: 'none', lg: 'none', xl: 'inline-flex'}}
                                     leftIcon={<Icon as={FcBusinessContact}/>}
                                     onClick={setContactInfoOpen}>
                                 Contact
                             </Button>
-                            <Button display={{sm: 'none', md: 'none', lg: 'inline-flex'}}
+                            <Button display={{base: 'none', sm: 'none', md: 'none', lg: 'none', xl: 'inline-flex'}}
                                     leftIcon={<Icon as={FcDiploma2}/>}
                                     onClick={setCVOpen}>
                                 CV
@@ -138,7 +138,7 @@ const NavBar = (props) => {
                                             _hover={{
                                                 backgroundColor: colorMode === 'light' ? '#5f5fcb' : '#eebb52',
                                             }}
-                                            display={{base: 'none', md: 'none', lg: 'inline-flex'}}
+                                            display={{base: 'none', md: 'none', lg: 'none', xl: 'inline-flex'}}
                                     >
                                         {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
                                     </Button>
@@ -147,7 +147,7 @@ const NavBar = (props) => {
 
                             <Menu onClose={onClose}>
                                 <MenuButton
-                                    display={{base: 'inline-flex', md: 'inline-flex', sm: 'inline-flex', lg: 'none'}}
+                                    display={{base: 'inline-flex', md: 'inline-flex', sm: 'inline-flex', lg: 'inline-flex', xl: 'none'}}
                                     as={IconButton}
                                     icon={isOpen ? <SmallCloseIcon/> : <HamburgerIcon/>}
                                     onClick={isOpen ? onClose : onOpen}
