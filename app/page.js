@@ -4,15 +4,16 @@ import {
   Box,
   Container,
   Heading,
+  Image,
   Link,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
 
-import FeaturedProjects from '@/components/featuredProjects';
+import FeaturedProjects from '@/components/homepage/featuredProjects';
+import SoftwareEngineeringProjects from '@/components/homepage/softwareEngineeringProjects';
+import UniversityProjects from '@/components/homepage/universityProjects';
 import PageSection from '@/components/pageSection';
-import SoftwareEngineeringProjects from '@/components/softwareEngineeringProjects';
-import UniversityProjects from '@/components/universityProjects';
 
 export default function Home() {
   return (
@@ -66,11 +67,14 @@ export default function Home() {
             borderRadius={'full'}
             overflow={'hidden'}
           >
-            <img
+            <Image
               src={'/images/profile.jpeg'}
               alt={'Profile Picture'}
-              width={100}
-              height={100}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }}
             />
           </Box>
         </Box>

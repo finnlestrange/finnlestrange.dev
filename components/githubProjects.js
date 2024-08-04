@@ -13,10 +13,9 @@ import {
   SimpleGrid,
   Icon,
   useColorModeValue,
-  useColorMode,
 } from '@chakra-ui/react';
 import Link from 'next/link';
-import { FaGithub, FaApple } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 import {
   FcDocument,
   FcAlarmClock,
@@ -74,7 +73,7 @@ export default function GithubProjects() {
             <chakra.h2 fontSize="3xl" fontWeight="700" fontFamily={'mono'}>
               Personal Projects
             </chakra.h2>
-            <Link href={'https://github.com/71xn'} target={'_blank'}>
+            <Link href={'https://github.com/finnlestrange'} target={'_blank'}>
               <Button colorScheme="green" size="md" leftIcon={<FaGithub />}>
                 GitHub
               </Button>
@@ -94,31 +93,13 @@ export default function GithubProjects() {
       <Divider mt={12} mb={12} />
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
         <Feature
-          icon={
-            <Icon
-              as={FaApple}
-              color={useColorMode().colorMode === 'light' ? 'black' : 'white'}
-              w={10}
-              h={10}
-            />
-          }
-          title={'Custom Hackintosh'}
-          text={
-            'This is a project that I have been working on over the spring break. I converted an old workstation' +
-            ' into a custom hackintosh. I am still collating all the notes and files into a single repo.'
-          }
-          link={'https://github.com/71xn/x99-hackintosh'}
-          linkText={'Repo'}
-          buttonIcon={FaGithub}
-        />
-        <Feature
           icon={<Icon as={FcGlobe} w={10} h={10} />}
           title={'This Portfolio'}
           text={
             'This portfolio has been my first deep dive into working with a full stack next.js application. I have ' +
             'also used this oportunity to learn about the Chakra UI library, and all the new features in Next.js 13.'
           }
-          link={'https://github.com/71xn/finnlestrange.tech'}
+          link={'https://github.com/finnlestrange/finnlestrange.dev'}
           linkText={'Source Code'}
           buttonIcon={FaGithub}
         />

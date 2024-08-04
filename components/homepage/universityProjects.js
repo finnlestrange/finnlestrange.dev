@@ -21,7 +21,7 @@ import {
 const Card = ({ heading, description, icon }) => {
   return (
     <Box
-      maxW={{ base: 'full', md: '197px' }}
+      maxW={{ base: 'full', md: '180px' }}
       w={'full'}
       borderWidth="1px"
       borderRadius="lg"

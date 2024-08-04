@@ -8,8 +8,9 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { AiFillBell } from 'react-icons/ai';
-import { FaKey, FaRedhat, FaSatellite } from 'react-icons/fa';
-import { FiGitlab } from 'react-icons/fi';
+import { BiRfid } from 'react-icons/bi';
+import { FaRedhat } from 'react-icons/fa';
+import { FiGitlab, FiPackage } from 'react-icons/fi';
 import { VscAzure } from 'react-icons/vsc';
 
 const Feature = ({ title, text, icon }) => {
@@ -44,7 +45,7 @@ export default function SoftwareEngineeringProjects() {
         spacing={10}
       >
         <Feature
-          icon={<Icon as={FaSatellite} color={'#3182CE'} w={10} h={10} />}
+          icon={<Icon as={BiRfid} color={'#3182CE'} w={10} h={10} />}
           title={'RFIoT'}
           text={
             'I have been working on a project for a new client RFIoT, that makes use of RFID tags to do room occupancy detection. ' +
@@ -60,7 +61,7 @@ export default function SoftwareEngineeringProjects() {
           }
         />
         <Feature
-          icon={<Icon as={FaKey} color={'#48BB78'} w={10} h={10} />}
+          icon={<Icon as={FiPackage} color={'#af65ff'} w={10} h={10} />}
           title={'Shibboleth SSO'}
           text={
             'My role now includes maintaining, setting up & updating Shibboleth Service Providers. I am the point of contact for ' +
