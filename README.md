@@ -26,7 +26,7 @@ cd finnlestrange.dev
 ```
 
 > [!important] 
-> Always run npm install after pulling new changes to ensure all dependencies are up to date.
+> Always run `npm install` after pulling new changes to ensure all dependencies are up to date.
 
 **Install dependencies**
 
@@ -45,7 +45,16 @@ npm run dev
 npm run build
 ```
 > [!Caution]
-> Please make sure that within `./next.config.js` the flag `output` is set to `output: 'export',` when building or pushing a build for production.
+> Please make sure that within `./next.config.js` the flag `output` is set to `output: 'export',` when building or pushing a build for production. See example below:
+
+```javascript
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+};
+
+module.exports = nextConfig;
+```
 
 ## 📄 License
 > [!note]
