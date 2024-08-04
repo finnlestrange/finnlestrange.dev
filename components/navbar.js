@@ -337,7 +337,7 @@ const NavBar = (props) => {
                     if (typeof window !== 'undefined') {
                       window.open(
                         'https://stgit.dcs.gla.ac.uk/2737719l',
-                        '_blank'
+                        '_blank',
                       );
                     }
                   }}
@@ -354,7 +354,7 @@ const NavBar = (props) => {
                     if (typeof window !== 'undefined') {
                       window.open(
                         'https://facebook.com/finn.lestrange',
-                        '_blank'
+                        '_blank',
                       );
                     }
                   }}
@@ -371,7 +371,7 @@ const NavBar = (props) => {
                     if (typeof window !== 'undefined') {
                       window.open(
                         'https://instaram.com/finn.lestrange',
-                        '_blank'
+                        '_blank',
                       );
                     }
                   }}
